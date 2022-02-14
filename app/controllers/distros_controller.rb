@@ -1,11 +1,12 @@
 class DistrosController < ApplicationController
-  before_action :set_distro, only: %i[ show update destroy ]
+  #before_action :set_distro, only: %i[ show update destroy ]
+  before_action :set_distro, except: [:create, :update, :destroy]
 
   # GET /distros
   def index
     @distros = Distro.all
 
-    render json: @distros
+    render json: @distros.to_json(only: [:id, :nombre, :url])
   end
 
   # GET /distros/1
