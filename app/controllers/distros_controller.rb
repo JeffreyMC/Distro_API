@@ -15,14 +15,13 @@ class DistrosController < ApplicationController
 
   # POST /distros
   def create
-    @distro = Distro.new(distro_params)
+    #@distro = Distro.new(distro_params)
 
     if @distro.save
       render json: @distro, status: :created, location: @distro
     else
       render json: @distro.errors, status: :unprocessable_entity
     end
-
   end
 
   # PATCH/PUT /distros/1
