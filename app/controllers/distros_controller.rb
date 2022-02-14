@@ -1,6 +1,5 @@
 class DistrosController < ApplicationController
   before_action :set_distro, only: %i[ show ]
-  after_action :set_distro, only: [:show,]
 
   # GET /distros
   def index
@@ -17,12 +16,16 @@ class DistrosController < ApplicationController
   # POST /distros
   def create
     @distro = Distro.new(distro_params)
+    @mensaje = "Ups, no se pueden crear distros"
 
+    render json: @mensaje, status: :unprocessable_entity
+    =begin
     if @distro.save
       render json: @distro, status: :created, location: @distro
     else
       render json: @distro.errors, status: :unprocessable_entity
     end
+    =end
   end
 
   # PATCH/PUT /distros/1
