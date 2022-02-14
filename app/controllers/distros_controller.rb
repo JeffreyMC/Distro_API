@@ -21,9 +21,10 @@ class DistrosController < ApplicationController
       render json: @distro, status: :created, location: @distro
     else
       render json: @distro.errors, status: :unprocessable_entity
+    end
 
   end
-  
+
   # PATCH/PUT /distros/1
   def update
     if @distro.update(distro_params)
