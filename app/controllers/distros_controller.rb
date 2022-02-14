@@ -14,7 +14,6 @@ class DistrosController < ApplicationController
   end
 
   # POST /distros
-  =begin
   def create
     @distro = Distro.new(distro_params)
 
@@ -24,7 +23,7 @@ class DistrosController < ApplicationController
       render json: @distro.errors, status: :unprocessable_entity
 
   end
-=end
+  
   # PATCH/PUT /distros/1
   def update
     if @distro.update(distro_params)
