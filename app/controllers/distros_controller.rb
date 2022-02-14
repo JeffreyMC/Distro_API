@@ -1,6 +1,6 @@
 class DistrosController < ApplicationController
   before_action :set_distro, only: %i[ show ]
-  #before_action :set_distro, except: [:show, :index]
+  after_action :set_distro, only: [:show,]
 
   # GET /distros
   def index
