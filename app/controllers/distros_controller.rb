@@ -14,22 +14,17 @@ class DistrosController < ApplicationController
   end
 
   # POST /distros
+  =begin
   def create
-    #@distro = Distro.new(distro_params)
-    @mensaje = "Ups, no se pueden crear distros"
+    @distro = Distro.new(distro_params)
 
-    render json: @mensaje, status: :unprocessable_entity
-
-    =begin
     if @distro.save
       render json: @distro, status: :created, location: @distro
     else
       render json: @distro.errors, status: :unprocessable_entity
-    end
-    =end
-    
-  end
 
+  end
+=end
   # PATCH/PUT /distros/1
   def update
     if @distro.update(distro_params)
