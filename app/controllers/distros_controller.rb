@@ -1,6 +1,6 @@
 class DistrosController < ApplicationController
   #before_action :set_distro, only: %i[ show update destroy ]
-  before_action :set_distro, except: [:create, :update, :destroy]
+  before_action :set_distro, except: [:show, :index]
 
   # GET /distros
   def index
