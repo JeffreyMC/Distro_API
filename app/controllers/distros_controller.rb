@@ -10,7 +10,7 @@ class DistrosController < ApplicationController
 
   # GET /distros/1
   def show
-    render json: @distro.to_json(only: [:id, :nombre])
+    render json: @distro.to_json(only: [:id, :nombre, :url])
   end
 
   # POST /distros
